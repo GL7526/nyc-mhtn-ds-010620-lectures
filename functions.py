@@ -147,25 +147,43 @@ albumsbydecades(listofdicts)
 
 
 
-# open the text file in read
-text_file = open('top-500-songs.txt', 'r')
-    # read each line of the text file
-    # here is where you can print out the lines to your terminal and get an idea 
-    # for how you might think about re-formatting the data
-lines = text_file.readlines()
+import matplotlib as plt
+%matplotlib inline
 
-tsplit = [x.split('\t') for x in lines]
+from collections import defaultdict
+genrecount = defaultdict(int)
 
-for x in tsplit:
-    x[3] = x[3].strip('\n')
+def albumsbygenre(yourlist):
+    cleanlist1 = []
+    cleanlist2 = []
+    cleanlist3 = []
+    cleanlist4 = []
+    genres = [x['genre'] for x in listofdicts]
+    genres = [x.split(', ') for x in genres]
+    for x in genres:
+        cleanlist1.extend(x)
+    genres = [x.split(' & ') for x in cleanlist1]
+    for x in genres:
+        cleanlist2.extend(x)
+    genres = [x.split('& ') for x in cleanlist2]
+    for x in genres:
+        cleanlist3.extend(x)
+    genres = [x.split(',') for x in cleanlist3]
+    for x in genres:    
+        cleanlist4.extend(x)
+    for genre in cleanlist4:
+        genrecount[genre] += 1
+    genrecount.pop('')
+    return dict(genrecount) #plt.pyplot.bar(,width=10,edgecolor='black')
 
-mykeys = ['rank', 'name', 'artist', 'year']
+albumsbygenre(listofdicts)
 
-newlist = []
+plt.pyplot.bar(genrecount.keys(),genrecount.values(),edgecolor = 'black')
 
-for mydict in tsplit:
-    newlist.append(dict(zip(mykeys, mydict)))
+plt.pyplot.xlabel('Genres')
+plt.pyplot.ylabel('Albums Released')
+plt.pyplot.title('Albums Released Per Genre')
+plt.pyplot.xticks(rotation = 90)
 
-newlist[0:10]
 
 

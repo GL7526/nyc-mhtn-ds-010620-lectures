@@ -28,7 +28,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 1,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -45,7 +45,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 2,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -54,7 +54,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 3,
    "metadata": {},
    "outputs": [
     {
@@ -63,7 +63,7 @@
        "__main__.Dog"
       ]
      },
-     "execution_count": 5,
+     "execution_count": 3,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -81,12 +81,12 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 57,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [],
    "source": [
     "class Dog():\n",
-    "    def __init__(self,name,age):\n",
+    "    def __init__(self, name, age):\n",
     "        self.name = name\n",
     "        self.age = age"
    ]
@@ -102,15 +102,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [],
    "source": [
     "class Dog():\n",
-    "    def __init__(self,name,age):\n",
+    "    species = \"mammal\"\n",
+    "    def __init__(self, name, age):\n",
     "        self.name = name\n",
-    "        self.age = age\n",
-    "    species = 'mammal'\n"
+    "        self.age = age"
    ]
   },
   {
@@ -135,10 +135,9 @@
     }
    ],
    "source": [
-    "Chunk = Dog('Chunk', 2)\n",
-    "Oreo = Dog('Oreo', 6)\n",
-    "\n",
-    "print(Chunk.name + ' is ' + str(Chunk.age) + ' and ' + Oreo.name + ' is ' + str(Oreo.age))"
+    "Chunk = Dog(\"Chunk\", 2)\n",
+    "Oreo = Dog(\"Oreo\", 6)\n",
+    "print(Chunk.name + \" is \" + str(Chunk.age) + \" and \" + Oreo.name + \" is \" + str(Oreo.age))"
    ]
   },
   {
@@ -150,22 +149,19 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
+   "execution_count": 10,
    "metadata": {},
    "outputs": [
     {
-     "data": {
-      "text/plain": [
-       "'mammal'"
-      ]
-     },
-     "execution_count": 20,
-     "metadata": {},
-     "output_type": "execute_result"
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Chunk is a mammal!\n"
+     ]
     }
    ],
    "source": [
-    "Chunk.species"
+    "print(Chunk.name + \" is a \" + Chunk.species + \"!\")"
    ]
   },
   {
@@ -179,7 +175,23 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class Dog():\n",
+    "    species = \"mammal\"\n",
+    "    def __init__(self, name, age):\n",
+    "        self.name = name\n",
+    "        self.age = age\n",
+    "    def speak (self, sound):\n",
+    "        print(self.name + \" says \" + sound)\n",
+    "        \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
    "metadata": {},
    "outputs": [
     {
@@ -191,15 +203,7 @@
     }
    ],
    "source": [
-    "class Dog():\n",
-    "    def __init__(self,name,age):\n",
-    "        self.name = name\n",
-    "        self.age = age\n",
-    "    species = 'mammal'\n",
-    "    def speak(self, sound):\n",
-    "        print(self.name + ' says ' + sound)\n",
-    "        \n",
-    "Chunk.speak('bark')"
+    "Chunk.speak(\"bark\")"
    ]
   },
   {
@@ -225,18 +229,17 @@
    ],
    "source": [
     "class Dog():\n",
-    "    def __init__(self,name,age):\n",
+    "    species = \"mammal\"\n",
+    "    def __init__(self, name, age):\n",
     "        self.name = name\n",
     "        self.age = age\n",
-    "    species = 'mammal'\n",
-    "    def speak(self, sound):\n",
-    "        print(self.name + ' says ' + sound)\n",
-    "    def yearsold(self):\n",
+    "    def speak (self, sound):\n",
+    "        print(self.name + \" says \" + sound)\n",
+    "    def years_old(self):\n",
     "        print(self.name + ' is ' + str(self.age) + ' years old')\n",
     "        \n",
-    "Chunk = Dog('Chunk', 2)\n",
-    "\n",
-    "Chunk.yearsold()"
+    "Chunk = Dog(\"Chunk\", 2)\n",
+    "Chunk.years_old()"
    ]
   },
   {
@@ -249,30 +252,37 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 29,
+   "execution_count": 34,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Chunk is 6 years old\n",
-      "Chunk says Bark bark\n"
+      "Chunk is 6 years old\n"
      ]
     }
    ],
    "source": [
-    "Chunk = Dog('Chunk', 6)\n",
-    "Chunk.yearsold()"
+    "Chunk = Dog(\"Chunk\", 6)\n",
+    "Chunk.years_old()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 35,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Chunk says Bark Bark\n"
+     ]
+    }
+   ],
    "source": [
-    "Chunk.speak('Bark bark')"
+    "Chunk.speak('Bark Bark')"
    ]
   },
   {
@@ -298,7 +308,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 33,
+   "execution_count": 83,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -313,7 +323,7 @@
     "        if len(data_2) % 2 == 1:\n",
     "            self.median = data[int((len(data_2)-1)/2)]\n",
     "        else:\n",
-    "            self.median = (data[(len(data_2)/2)]+data[(len(data_2)/2-1)])/2\n",
+    "            self.median = (data[int(len(data_2)/2)]+data[int(len(data_2)/2-1)])/2\n",
     "        squareddiff = [(x-self.mean)**2 for x in data]\n",
     "        self.variance = sum(squareddiff)/self.length\n",
     "        self.stand_dev = math.sqrt(self.variance)\n",
@@ -321,58 +331,47 @@
     "        self.data.extend(more_data)\n",
     "    def remove_data(self, data_to_remove):\n",
     "        for data in data_to_remove:\n",
-    "            self.data.remove(data)"
+    "            self.data.remove(data)\n",
+    "    "
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 34,
+   "execution_count": 84,
    "metadata": {},
    "outputs": [],
    "source": [
-    "this_calc = calculator([1,2,3,4,5])"
+    "my_calc=calculator([1,1,2,3,1])"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 35,
+   "execution_count": 85,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_calc.remove_data([1,2])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 86,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "3"
+       "[1, 3, 1]"
       ]
      },
-     "execution_count": 35,
+     "execution_count": 86,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
-    "this_calc.median"
+    "my_calc.data"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 40,
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {
@@ -391,7 +390,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.7.4"
+   "version": "3.6.9"
   }
  },
  "nbformat": 4,

@@ -22,7 +22,7 @@ def test_mean():
 def test_std():
     data = [2, 10, 15, 20, 45, 55, 80]
     instance = Calculator(data)
-    actual_std = instance.mean
+    actual_std = instance.stand_dev
     expected_std = 28.33641
     message = "Expected STD: {0}, Actual value: {1}".format(expected_std,
                                                               actual_std)
@@ -55,3 +55,10 @@ def test_remove_data():
     message = "called remove_data() and expected mean: {0}, but got value: {1}".format(expected_mean,
                                                               actual_mean)
     assert instance.mean == pytest.approx(expected_mean), message
+    
+
+test_mean()
+test_std()
+test_order()
+test_add_data()
+test_remove_data()
